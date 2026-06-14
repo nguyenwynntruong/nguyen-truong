@@ -1,0 +1,675 @@
+
+    /* ─── Reset ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ─── Tokens ──────────────────────────────────────────────── */
+    :root {
+      --paper:    #F4EFE7;
+      --ink:      #1A1A1A;
+      --accent:   #E8541E;
+      --charcoal: #2A2622;
+      --muted:    #6B6259;
+      --hairline: #B8AFA6;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+      --radius: 4px;
+      --max-w: 1080px;
+      --sec-pad-v: 52px;
+    }
+
+    /* ─── Base ────────────────────────────────────────────────── */
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── Focus ───────────────────────────────────────────────── */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: var(--radius);
+    }
+
+    /* ─── Layout helpers ──────────────────────────────────────── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section { padding: var(--sec-pad-v) 0; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0;
+      margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+      white-space: nowrap; border-width: 0;
+    }
+
+    /* ─── Eyebrow ─────────────────────────────────────────────── */
+    .eyebrow {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────────── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--paper);
+      border-bottom: 1px solid var(--hairline);
+    }
+    .site-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-wordmark {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .nav-wordmark span { color: var(--accent); font-weight: 700; }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    /* Nav-level CV download button */
+    .nav-cv-btn {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: #fff !important;
+      padding: 7px 14px;
+      border-radius: 4px;
+      transition: background 0.15s !important;
+    }
+    .nav-cv-btn:hover { background: #cc4518 !important; color: #fff !important; }
+
+    /* ─── HERO ────────────────────────────────────────────────── */
+    .hero {
+      padding: 64px 0 56px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 56px;
+      align-items: center;   /* vertically centres photo with the copy block */
+    }
+    .hero-copy { /* left column — no extra styles needed */ }
+    .hero-photo-col {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .hero-avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;  /* keeps face in frame */
+      border: 4px solid var(--hairline);
+      display: block;
+      flex-shrink: 0;
+      /* Subtle accent ring on the outside */
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(36px, 5vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 24px;
+      max-width: 760px;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--ink);
+      max-width: 620px;
+      margin-bottom: 36px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .btn {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 11px 22px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      border: 1px solid transparent;
+    }
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-primary:hover { background: #cc4518; border-color: #cc4518; }
+    .btn-outline { background: transparent; color: var(--ink); border-color: var(--ink); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-note { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+    /* ─── SECTION HEADER ──────────────────────────────────────── */
+    .section-header { margin-bottom: 32px; }
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(26px, 3.5vw, 36px);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    /* ─── SLIDER HEADER (section title + arrow buttons) ─────── */
+    /* Section heading — simple, no arrow row */
+    .slider-header {
+      margin-bottom: 24px;
+    }
+
+    /* Outer wrapper: positions the floating arrows */
+    .slider-outer {
+      position: relative;
+    }
+
+    /* Floating arrow buttons — centred vertically over the track */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      /* Warm charcoal fill, semi-transparent so card image shows through slightly */
+      background: rgba(42, 38, 34, 0.78);
+      color: var(--paper);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background 0.15s, opacity 0.2s, transform 0.15s;
+      /* Pull arrows slightly outside the track edge for a clean floating look */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .slider-btn.prev { left: 12px; }
+    .slider-btn.next { right: 12px; }
+    .slider-btn:hover {
+      background: var(--charcoal);
+      transform: translateY(-50%) scale(1.08);
+    }
+    /* Fade out when there's nothing to scroll in that direction */
+    .slider-btn:disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .slider-btn svg {
+      width: 16px; height: 16px;
+      display: block;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ─── WORK — scroll-track wrapper ────────────────────────── */
+    .work { border-bottom: 1px solid var(--hairline); }
+
+    /* Desktop: horizontal scroll carousel — same feel as mobile but wider cards */
+    .work-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 16px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      /* negative margin so first card aligns with the container edge */
+      padding-bottom: 4px;   /* tiny breathing room for card shadows if added later */
+    }
+    .work-track::-webkit-scrollbar { display: none; }
+
+    /* ─── WORK CARD ───────────────────────────────────────────── */
+    .work-card {
+      background: var(--charcoal);
+      color: var(--paper);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      /* Desktop card width: ~340px so ~3 show with peek of next */
+      flex: 0 0 340px;
+      scroll-snap-align: start;
+      border-radius: var(--radius);
+      border: 1px solid rgba(184,175,166,0.15);
+    }
+
+    /* Image area — replace background-image with your actual project image */
+    .work-card-img {
+      width: 100%;
+      height: 160px;
+      background-color: #1E1A17;    /* dark placeholder tint */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(244,239,231,0.07);
+      position: relative;
+      overflow: hidden;
+    }
+    /* HOW TO ADD A PICTURE:
+       Option A – inline CSS on the element:
+         <div class="work-card-img" style="background-image:url('public/your-image.<ext>')">
+       Option B – add an <img> tag inside:
+         <img src="public/your-image.<ext>" alt="Project screenshot" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+       Either removes the placeholder icon automatically. */
+    .work-card-img-hint {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.25;
+      pointer-events: none;
+      user-select: none;
+    }
+    .work-card-img-hint svg { width: 28px; height: 28px; }
+    .work-card-img-hint span {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--paper);
+    }
+
+    .work-card-body {
+      padding: 22px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;  /* pin all content to top */
+      flex: 1;
+    }
+    .work-card-era {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .work-card h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--paper);
+      margin-bottom: 10px;
+    }
+    .work-card > .work-card-body > p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: #AFA89F;
+      margin-bottom: 16px;
+    }
+    /* Bold highlights inside card body */
+    .work-card-body strong {
+      color: #D4CCC5;
+      font-weight: 600;
+    }
+    /* "Click to View" link only (no "See the work") */
+    .work-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      transition: gap 0.15s;
+      border-bottom: 1px solid rgba(232, 84, 30, 0.35);
+      padding-bottom: 1px;
+    }
+    .work-card-link:hover { gap: 8px; border-bottom-color: var(--accent); }
+    /* Skill/tool tags row */
+    .work-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+      padding-top: 14px;
+    }
+    .work-card-tag {
+      background: var(--charcoal);        /* #2A2622 */
+      border: 1px solid rgba(244,239,231,0.12);
+      color: #C4BEBA;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    /* Placeholder card — 4th slot */
+    .work-card-placeholder {
+      background: #1C1713;
+      border: 2px dashed rgba(244,239,231,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      gap: 10px;
+      opacity: 0.5;
+    }
+    .work-card-placeholder svg { width: 32px; height: 32px; opacity: 0.5; }
+    .work-card-placeholder span {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--paper);
+    }
+
+    /* ─── BLOGS ───────────────────────────────────────────────── */
+    .blogs {
+      border-bottom: 1px solid var(--hairline);
+      padding: 48px 0;
+    }
+    .blogs .slider-header h2 { font-size: clamp(22px, 2.8vw, 28px); margin-bottom: 0; }
+
+    .blogs-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 16px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 4px;
+    }
+    .blogs-track::-webkit-scrollbar { display: none; }
+
+    .blog-card {
+      background: var(--paper);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      transition: border-color 0.15s;
+      /* Desktop card width */
+      flex: 0 0 300px;
+      scroll-snap-align: start;
+    }
+    .blog-card:hover { border-color: var(--accent); }
+    /* Image zone at top of each blog card */
+    .blog-card-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      flex-shrink: 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+    /* Text area below the image */
+    .blog-card-text {
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1;
+      width: 100%;
+    }
+    .blog-card-text .blog-card-date,
+    .blog-card-date {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .blog-card-text h3,
+    .blog-card h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .blog-card-text p,
+    .blog-card p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+      flex: 1;
+      margin-bottom: 14px;
+    }
+    .blog-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      margin-top: auto;
+      transition: gap 0.15s;
+    }
+    .blog-link:hover { gap: 7px; }
+
+    /* ─── ABOUT ───────────────────────────────────────────────── */
+    .about { border-bottom: 1px solid var(--hairline); }
+
+    /* Two-column split: text left, photo right */
+    .about-inner {
+      display: grid;
+      grid-template-columns: 55fr 45fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .about-text { /* left column — all copy */ }
+
+    .about-headline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(22px, 2.8vw, 30px);
+      color: var(--accent);
+      margin-bottom: 28px;
+      line-height: 1.2;
+    }
+    .about-body {
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .about-body:last-child { margin-bottom: 0; }
+
+    /* Photo column */
+    .about-photo-col {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .about-photo {
+      width: 100%;
+      max-width: 440px;
+      aspect-ratio: 3 / 2;        /* keeps the landscape crop consistent */
+      object-fit: cover;
+      object-position: center top; /* keeps faces in frame */
+      border-radius: 16px;         /* "cut corners to some extent" */
+      /* Thin accent frame */
+      border: 2px solid var(--accent);
+      /* Slight counter-clockwise tilt — feels candid, not staged */
+      transform: rotate(-1.5deg);
+      /* Smooth on hover: straighten as user focuses on it */
+      transition: transform 0.4s ease;
+      display: block;
+    }
+    .about-photo:hover { transform: rotate(0deg); }
+
+    /* ─── CONNECT ─────────────────────────────────────────────── */
+    .connect {
+      background: var(--charcoal);
+      padding: 40px 0 44px;
+    }
+    .connect .container {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* Attention nudge 1 — short accent rule above heading */
+    .connect-rule {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      border: none;
+      margin-bottom: 20px;
+    }
+    /* Heading — slightly larger than .about-headline (clamp 22–30px) */
+    .connect-headline {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(26px, 3.2vw, 36px);
+      letter-spacing: -0.02em;
+      color: var(--paper);
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+    /* Sub-line under heading */
+    .connect-sub {
+      font-size: 13px;
+      color: rgba(244,239,231,0.5);
+      margin-bottom: 24px;
+      letter-spacing: 0.02em;
+    }
+    .connect-btns {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+    /* Base button — outlined, used for LinkedIn */
+    .connect-btn {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--paper);
+      border: 1px solid rgba(244,239,231,0.28);
+      border-radius: var(--radius);
+      padding: 10px 20px;
+      min-width: 110px;
+      text-align: center;
+      transition: border-color 0.15s, color 0.15s, background 0.15s, font-weight 0.1s;
+    }
+    .connect-btn:hover { border-color: var(--accent); color: var(--accent); font-weight: 700; }
+    /* Attention nudge 2 — Email button: accent-filled, mirrors hero CTA */
+    .connect-btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .connect-btn-primary:hover { background: #cc4518; border-color: #cc4518; color: #fff; font-weight: 700; }
+
+    /* ─── MOBILE ──────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      :root { --sec-pad-v: 40px; }
+
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 10px; letter-spacing: 0.08em; }
+
+      .hero { padding: 48px 0 40px; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .hero-photo-col { justify-content: flex-start; }
+      .hero-avatar { width: 108px; height: 108px; }
+
+      /* About: stack photo above text on mobile */
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .about-photo-col { justify-content: flex-start; }
+      .about-photo {
+        max-width: 100%;
+        transform: rotate(0deg); /* no tilt on small screens */
+      }
+      .about-photo:hover { transform: rotate(0deg); }
+
+      /* Mobile: narrower cards so the next one peeks in */
+      .work-card,
+      .blog-card { flex: 0 0 78vw; }
+      .work-card-placeholder { flex: 0 0 78vw; }
+
+      .connect-btns { flex-wrap: wrap; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { gap: 12px; }
+      .work-card,
+      .blog-card,
+      .work-card-placeholder { flex-basis: 85vw; }
+    }
+
+    /* On very wide screens, allow cards to grow a touch */
+    @media (min-width: 1100px) {
+      .work-card { flex: 0 0 360px; }
+      .blog-card { flex: 0 0 320px; }
+    }
+  

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CX isn't broken. Your feedback loops are. | Nguyen</title>
+  <meta name="description" content="Most organizations don't have a CX problem: they have a feedback loop problem." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/blog-cx-feedback-loops.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-wordmark" href="../index.html">Nguyen<span>.</span></a>
+    <a class="nav-back" href="../index.html#blogs">&#8592; Back to blogs</a>
+  </div>
+</nav>
+
+<header class="blog-hero">
+  <div class="hero-wrap">
+    <p class="blog-meta">Nov 2025 &nbsp;·&nbsp; 4 min read</p>
+    <h1 class="blog-title">CX isn't broken. Your feedback loops are.</h1>
+    <p class="blog-deck">Most organizations don't have a CX problem: they have a feedback loop problem. The gap between what customers say and what companies actually do is where loyalty quietly dies.</p>
+    <img class="blog-hero-img" src="../public/close-the-loop.jpg" alt="Closing the feedback loop" />
+  </div>
+</header>
+
+<div class="blog-layout">
+
+  <!-- Sidebar TOC -->
+  <aside class="blog-toc" aria-label="Table of contents">
+    <p class="toc-label">Contents</p>
+    <ul class="toc-list">
+      <li><a href="#s1">Why feedback dies in the middle</a></li>
+      <li><a href="#s2">Issues you can't fix yet</a></li>
+      <li><a href="#s3">Transparency and operational courage</a></li>
+    </ul>
+  </aside>
+
+  <!-- Article -->
+  <article class="blog-content">
+
+    <p>If there's one uncomfortable truth I've learned after digging through customer verbatims, running VoC dashboards, and building personas and journey maps, it's this: most organizations don't have a CX problem: they have a feedback loop problem.</p>
+    <p>And that gap, between what customers say and what organizations actually do, is the real black hole where loyalty, trust, and growth quietly erode.</p>
+
+    <h2 id="s1">1. Why feedback dies in the middle</h2>
+
+    <blockquote><p>95% of companies ask for feedback, but only 10% act on it, and 5% tell their customers what they've done.</p></blockquote>
+
+    <p>Every organization collects feedback. Fewer know how to interpret it well. And a much smaller group knows how to act on it consistently, transparently, and across functions.</p>
+    <p>Here's what usually happens: a customer leaves a negative review. It gets tagged. It gets queued. The queue grows, spillover builds, the team gets overwhelmed. Eventually a root cause is spotted, but the fix needs another team. That team has other priorities. And so the issue lives forever as "to be improved next quarter."</p>
+    <p>Closing the loop isn't just "responding to complaints." It's a discipline, a system, a promise to customers, and honestly, a bit of a cultural shift. A strong closing-the-loop program does three things:</p>
+    <ul>
+      <li><strong>Acknowledges:</strong> customers know you heard them.</li>
+      <li><strong>Explains:</strong> they understand the why behind the issue.</li>
+      <li><strong>Improves:</strong> you make real changes, or explain why you can't yet.</li>
+    </ul>
+    <p>That last part is where most organizations stumble.</p>
+
+    <h2 id="s2">2. What about issues you can't fix yet?</h2>
+
+    <p>Sometimes you can't close the loop immediately: the fix is too big, too costly, too political, or not yet technically feasible. But "we can't fix it now" is not a license to stay silent. It's a moment to practice transparent CX:</p>
+    <ul>
+      <li>Acknowledge the signal: "We saw what you shared."</li>
+      <li>Explain honestly, without hiding behind jargon: "This requires changes to X, which we're actively scoping."</li>
+      <li>Offer what you can today: workarounds, human support, alternatives.</li>
+      <li>Set expectations: "Here's when you'll hear from us, even if the update is that nothing has changed yet."</li>
+      <li>Document the signal volume so leaders feel the pressure build over time.</li>
+    </ul>
+    <p>Customers don't demand perfection. They demand respect: being kept in the loop.</p>
+
+    <h2 id="s3">3. The future of CX is transparency plus operational courage</h2>
+
+    <p>The real currency of CX now is speed: speed of learning, speed of fixing, speed of communicating. A closing-the-loop culture is how organizations shrink the distance between signal, sense-making, and action.</p>
+
+  </article>
+
+</div>
+
+<footer class="blog-footer">
+  <div class="blog-footer-inner">
+    <a class="blog-footer-back" href="../index.html#blogs">&#8592; All blogs</a>
+  </div>
+</footer>
+
+<script>
+  // Highlight the TOC link whose section is currently on screen
+  const sections = document.querySelectorAll('.blog-content h2[id]');
+  const tocLinks = document.querySelectorAll('.toc-list a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(link => link.classList.remove('toc-active'));
+        const active = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('toc-active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -75% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

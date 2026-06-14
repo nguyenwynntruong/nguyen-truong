@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech giants and the game of personalization | Nguyen</title>
+  <meta name="description" content="The next era won't be won by the assistant that sounds smartest: but by the one that remembers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/blog-personalization.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-wordmark" href="../index.html">Nguyen<span>.</span></a>
+    <a class="nav-back" href="../index.html#blogs">&#8592; Back to blogs</a>
+  </div>
+</nav>
+
+<header class="blog-hero">
+  <div class="hero-wrap">
+    <p class="blog-meta">Jan 2026 &nbsp;·&nbsp; 4 min read</p>
+    <h1 class="blog-title">Tech giants and the game of personalization</h1>
+    <p class="blog-deck">Amazon collects your habits. Google holds your autobiography. Apple knows without telling you it does. The next era of personal AI won't be won by the assistant that sounds smartest: but by the one that remembers.</p>
+    <img class="blog-hero-img" src="../public/tech%20giants.webp" alt="Tech giants and personalization" />
+  </div>
+</header>
+
+<div class="blog-layout">
+
+  <aside class="blog-toc" aria-label="Table of contents">
+    <p class="toc-label">Contents</p>
+    <ul class="toc-list">
+      <li><a href="#s1">Why Amazon underperforms</a></li>
+      <li><a href="#s2">Google: archivist of the self</a></li>
+      <li><a href="#s3">Apple's privacy moat</a></li>
+      <li><a href="#s4">Personalization and memory</a></li>
+    </ul>
+  </aside>
+
+  <article class="blog-content">
+
+    <p>Here, "personalization" specifically means personal assistance. And the real contest in personal AI isn't intelligence: it's memory. Whoever remembers you best, wins.</p>
+
+    <h2 id="s1">Why Amazon underperforms at "personal intelligence"</h2>
+
+    <p>Amazon has built an end-to-end consumption ecosystem: commerce platforms that drive transactions, voice assistants that lower the friction to buy, and streaming services engineered to absorb the century's most valuable currency, time and attention. It's very good at the behavioral layer: what you buy, when, how often.</p>
+    <p>What's unclear is whether it reaches the biographical layer: your history, your priorities, the emotional texture of how you live. Those are different kinds of knowing, and the second is harder to fake.</p>
+
+    <h2 id="s2">The breadth of memory: Google as archivist of the self</h2>
+
+    <p>Google holds, in many ways, your explicitly stated life: your intent over decades (Search), your written thoughts over years (Docs, Gmail), how you move through the world (Maps, Location History), your visual memory (Photos), and your interests (YouTube, Ads).</p>
+    <p>Imagine an assistant that can draw on years of your own stated intent and remembers it more completely than you do. Memory compounds, and that's what makes Google's move into consumer AI feel uniquely credible.</p>
+
+    <h2 id="s3">Apple's privacy moat, and its trade-offs</h2>
+
+    <p>Apple's privacy stance looks like a constraint: less data, less cross-app memory, less of the raw material personalization runs on. But that constraint is the strategy. Apple is likely to personalize in a quieter key, inferring context on-device, knowing you without announcing that it does. Where others make the data trade explicit, Apple keeps it ambient.</p>
+
+    <h2 id="s4">Personalization and memory</h2>
+
+    <p>The best personalization has always depended on the same things: knowing what happened last time, understanding a person's patterns, predicting intent, and sparing the customer the burden of re-explaining themselves. Siloed CRMs, loyalty programs, and account histories were all early memory systems, shallow recall, in hindsight.</p>
+    <p>The next question is who consolidates them into something continuous. Whoever does will hold a memory of us more complete than any single platform has today.</p>
+
+    <blockquote><p>The game won't be won by the assistant that sounds smartest, but by the one that remembers without being asked: that learns without spying, helps quietly in the background, and grows with you as you change.</p></blockquote>
+
+    <p>CX is becoming autobiographical. The platforms and brands that understand this shift early will stop competing on features and start compounding on memory.</p>
+
+    <p class="blog-note">A note on scope: the views above are my simplified reading of how major players are positioned, specifically around AI-driven personal assistants informed by user data.</p>
+
+  </article>
+
+</div>
+
+<footer class="blog-footer">
+  <div class="blog-footer-inner">
+    <a class="blog-footer-back" href="../index.html#blogs">&#8592; All blogs</a>
+  </div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('.blog-content h2[id]');
+  const tocLinks = document.querySelectorAll('.toc-list a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(l => l.classList.remove('toc-active'));
+        const active = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('toc-active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -75% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

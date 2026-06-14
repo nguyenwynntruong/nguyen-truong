@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beyond NPS and into Infinity | Nguyen</title>
+  <meta name="description" content="NPS spread because it was simple, benchmarkable, and boardroom-friendly. None of that made it sufficient." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/blog-beyond-nps.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-wordmark" href="../index.html">Nguyen<span>.</span></a>
+    <a class="nav-back" href="../index.html#blogs">&#8592; Back to blogs</a>
+  </div>
+</nav>
+
+<header class="blog-hero">
+  <div class="hero-wrap">
+    <p class="blog-meta">Dec 2025 &nbsp;·&nbsp; 5 min read</p>
+    <h1 class="blog-title">Beyond NPS and into Infinity</h1>
+    <p class="blog-deck">NPS spread because it was simple, benchmarkable, and boardroom-friendly. None of that made it sufficient. Why the strongest CX teams still use it: they just don't ask it to carry the whole story anymore.</p>
+    <img class="blog-hero-img" src="../public/beyond-NPS-into-Infinity.png" alt="Beyond NPS and into Infinity" />
+  </div>
+</header>
+
+<div class="blog-layout">
+
+  <aside class="blog-toc" aria-label="Table of contents">
+    <p class="toc-label">Contents</p>
+    <ul class="toc-list">
+      <li><a href="#s1">Still useful, no longer sufficient</a></li>
+      <li><a href="#s2">Alternative metrics</a></li>
+      <li><a href="#s3">Fluid, adaptive measurement</a></li>
+    </ul>
+  </aside>
+
+  <article class="blog-content">
+
+    <p>Before we question Net Promoter Score, it's worth remembering why it became so powerful in the first place. NPS was introduced in the early 2000s by Fred Reichheld of Bain &amp; Company, alongside Satmetrix, at a time when customer measurement was slow, complex, and disconnected from the rest of how organizations measured performance.</p>
+    <p>By reducing loyalty to a single intuitive question, "How likely are you to recommend us?", it gave leaders a clear, comparable signal that correlated with referrals, retention, and business performance. Its simplicity, benchmarkability, and executive appeal are exactly why it spread so fast, and why it's still here. But the world has outgrown it, pushed along by changes in organizational design, the metrics we treat as success, and by technology: machine learning and agentic AI.</p>
+
+    <h2 id="s1">1. Still useful, no longer sufficient</h2>
+
+    <p>NPS persists because it answers a question leaders care about: how do customers feel about us, in general? Used at the right altitude, brand level, relationship level, over time, it's still helpful. It gives a directional read, it's easy to explain in a boardroom, and it creates shared language across teams.</p>
+    <p>The problem isn't NPS itself. The problem is how much we ask it to do. In practice, it gets stretched to diagnose product issues, evaluate support interactions, prioritize fixes, and predict churn. Research and practice show the same limits:</p>
+    <ul>
+      <li>It has a weak link to actual, in-the-moment behavior.</li>
+      <li>It doesn't explain why customers feel the way they do.</li>
+      <li>It moves too slowly for modern digital journeys.</li>
+      <li>It depends on surveys: and survey fatigue is real.</li>
+    </ul>
+    <p>In 2025, NPS works best as a supporting signal, not the headline metric. Downgraded, not deleted.</p>
+
+    <h2 id="s2">2. The rise of alternative metrics</h2>
+
+    <p>As NPS loses dominance, organizations haven't replaced it with one new score. They've built measurement stacks: Customer Effort Score for friction, CSAT tied to specific interactions, retention and repeat usage for real behavior, error rates and time-to-resolution for digital and service journeys.</p>
+    <p>These are more actionable because they sit closer to what customers actually do, they're tied to a moment rather than a vague relationship, and they're easier to link to operational change. But they still share one limitation: most of them still rely on customers telling us how they feel.</p>
+
+    <h2 id="s3">3. The shift toward fluid, adaptive measurement</h2>
+
+    <p>The most important change ahead isn't a better survey. It's measuring satisfaction without asking. Teams are moving toward passive, continuous signals that reflect near-real-time experience. Enabled by AI, they can observe:</p>
+    <ul>
+      <li>Tone, pace, and hesitation in calls.</li>
+      <li>Language patterns across chats, emails, and reviews.</li>
+      <li>Repetition, escalation, and emotional intensity.</li>
+      <li>Drop-offs, retries, and friction in digital journeys.</li>
+    </ul>
+    <p>Together these form emotional profiles: how a customer's behavior shifts under stress or dissatisfaction, when frustration builds, when trust erodes or recovers. Unlike a survey snapshot, these profiles are continuous and evolving, population-wide rather than sampled, and real-time rather than retrospective. They let teams catch problems before customers complain. Satisfaction becomes something you sense.</p>
+
+    <blockquote><p>The strongest teams in 2025 still use NPS. They just no longer need it to tell the whole story.</p></blockquote>
+
+  </article>
+
+</div>
+
+<footer class="blog-footer">
+  <div class="blog-footer-inner">
+    <a class="blog-footer-back" href="../index.html#blogs">&#8592; All blogs</a>
+  </div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('.blog-content h2[id]');
+  const tocLinks = document.querySelectorAll('.toc-list a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(l => l.classList.remove('toc-active'));
+        const active = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('toc-active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -75% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
