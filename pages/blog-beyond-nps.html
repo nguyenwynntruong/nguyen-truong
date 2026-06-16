@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beyond NPS and into Infinity | Nguyen</title>
+  <title>Beyond NPS and &ldquo;into Infinity&rdquo; | Nguyen</title>
   <meta name="description" content="NPS spread because it was simple, benchmarkable, and boardroom-friendly. None of that made it sufficient." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,6 +58,9 @@
     blockquote { border-left: 3px solid var(--accent); margin: 28px 0; padding: 6px 0 6px 20px; }
     blockquote p { font-family: var(--font-display); font-style: italic; font-size: 18px; line-height: 1.5; color: var(--muted); margin: 0; }
 
+    .blog-note { font-size: 13px; color: var(--muted); border-top: 1px solid var(--hairline); padding-top: 20px; margin-top: 36px; line-height: 1.75; }
+    .blog-note a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
     .blog-footer { background: var(--charcoal); padding: 28px 0; }
     .blog-footer-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
     .blog-footer-back { font-size: 12px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: #9A8E86; display: flex; align-items: center; gap: 6px; transition: color 0.15s; }
@@ -81,9 +84,9 @@
 <header class="blog-hero">
   <div class="hero-wrap">
     <p class="blog-meta">Dec 2025 &nbsp;·&nbsp; 5 min read</p>
-    <h1 class="blog-title">Beyond NPS and into Infinity</h1>
+    <h1 class="blog-title">Beyond NPS and &ldquo;into Infinity&rdquo;</h1>
     <p class="blog-deck">NPS spread because it was simple, benchmarkable, and boardroom-friendly. None of that made it sufficient. Why the strongest CX teams still use it: they just don't ask it to carry the whole story anymore.</p>
-    <img class="blog-hero-img" src="../public/beyond-NPS-into-Infinity.png" alt="Beyond NPS and into Infinity" />
+    <img class="blog-hero-img" src="../public/beyond-NPS-into-Infinity.png" alt="Beyond NPS and &ldquo;into Infinity&rdquo;" />
   </div>
 </header>
 
@@ -92,46 +95,57 @@
   <aside class="blog-toc" aria-label="Table of contents">
     <p class="toc-label">Contents</p>
     <ul class="toc-list">
-      <li><a href="#s1">Still useful, no longer sufficient</a></li>
-      <li><a href="#s2">Alternative metrics</a></li>
-      <li><a href="#s3">Fluid, adaptive measurement</a></li>
+      <li><a href="#s1">Still useful. Just not enough.</a></li>
+      <li><a href="#s2">A cabinet of thermometers</a></li>
+      <li><a href="#s3">From temperature to reading the room</a></li>
+      <li><a href="#s4">Where does that leave the number?</a></li>
     </ul>
   </aside>
 
   <article class="blog-content">
 
-    <p>Before we question Net Promoter Score, it's worth remembering why it became so powerful in the first place. NPS was introduced in the early 2000s by Fred Reichheld of Bain &amp; Company, alongside Satmetrix, at a time when customer measurement was slow, complex, and disconnected from the rest of how organizations measured performance.</p>
-    <p>By reducing loyalty to a single intuitive question, "How likely are you to recommend us?", it gave leaders a clear, comparable signal that correlated with referrals, retention, and business performance. Its simplicity, benchmarkability, and executive appeal are exactly why it spread so fast, and why it's still here. But the world has outgrown it, pushed along by changes in organizational design, the metrics we treat as success, and by technology: machine learning and agentic AI.</p>
+    <p>Before we start tearing NPS down, I think it's only fair to remember why it earned its spot in the first place. When Fred Reichheld introduced it back in 2003 — in that famous Harvard Business Review piece, <em>"The One Number You Need to Grow"</em> — customer measurement was slow, messy, and weirdly disconnected from how a business actually judged itself. One question. "How likely are you to recommend us?" Suddenly leaders had a single, comparable signal they could rally around. It spread for a reason.</p>
 
-    <h2 id="s1">1. Still useful, no longer sufficient</h2>
+    <p>Here's how I've come to picture it, though. NPS is a thermometer. Hold it up and it tells you, fast and cheap, that the patient has a fever. What it can't tell you is where the infection is, what caused it, or what to do next. And for the better part of two decades, we've been asking that thermometer to perform surgery.</p>
 
-    <p>NPS persists because it answers a question leaders care about: how do customers feel about us, in general? Used at the right altitude, brand level, relationship level, over time, it's still helpful. It gives a directional read, it's easy to explain in a boardroom, and it creates shared language across teams.</p>
-    <p>The problem isn't NPS itself. The problem is how much we ask it to do. In practice, it gets stretched to diagnose product issues, evaluate support interactions, prioritize fixes, and predict churn. Research and practice show the same limits:</p>
+    <h2 id="s1">Still useful. Just not enough.</h2>
+
+    <p>NPS survives in corporates because it answers something leaders genuinely care about — how do customers feel about us, broadly? Used at the right altitude (brand level, relationship level, tracked over time) it does honest work. Directional read. Travels well in a room full of executives. Gives teams who measure completely different things one shared language to argue in.</p>
+    <p>So the problem was never the thermometer. It's diagnosis. In practice I've watched one NPS number get pushed into diagnosing product bugs, grading support agents, ranking the engineering backlog, and predicting churn. Four different surgeries. None of them a thermometer's job.</p>
+    <p>And honestly? The data was never as clean as the legend. That original promise — NPS predicts growth — has been picked apart. A longitudinal study in the <em>Journal of Marketing</em> found it didn't predict revenue growth any better than the satisfaction metrics we already had. So even the headline deserves a second look. On its own the score has a weak link to what a customer actually does in the moment. It doesn't tell you why they feel what they feel. It moves too slowly for digital journeys. And it leans entirely on surveys — which, in an attention-starved world, means asking someone to choose a feedback form over the next reel. Good luck.</p>
+    <p>In 2025 it works best as a supporting signal, not the headline. A downgrade, not a deletion.</p>
+
+    <h2 id="s2">A cabinet of thermometers</h2>
+
+    <p>When NPS lost its monopoly, nobody crowned any single metric as replacement. Teams built a stack — which, staying with the metaphor, is really just a cabinet full of more specialised thermometers, each reading a different part of the body.</p>
     <ul>
-      <li>It has a weak link to actual, in-the-moment behavior.</li>
-      <li>It doesn't explain why customers feel the way they do.</li>
-      <li>It moves too slowly for modern digital journeys.</li>
-      <li>It depends on surveys: and survey fatigue is real.</li>
+      <li><strong>CES</strong> for friction.</li>
+      <li><strong>CSAT</strong> pinned to a specific interaction.</li>
+      <li><strong>Retention, churn, repeat usage</strong> — reflecting what people actually do rather than what they say.</li>
+      <li><strong>Error rates and time-to-resolution</strong> for the health of a service or digital journey.</li>
     </ul>
-    <p>In 2025, NPS works best as a supporting signal, not the headline metric. Downgraded, not deleted.</p>
+    <p>Every one of these is more actionable than NPS, because each sits closer to the thing the customer did, tied to a moment instead of a fuzzy relationship, and easier to wire to an actual fix. But look at what they still share: almost all of them wait for the customer to stop their day and tell us how they feel. We swapped one thermometer for several. We never changed the part where we sit around waiting for the patient to describe their own symptoms.</p>
 
-    <h2 id="s2">2. The rise of alternative metrics</h2>
+    <h2 id="s3">From taking the temperature to reading the room</h2>
 
-    <p>As NPS loses dominance, organizations haven't replaced it with one new score. They've built measurement stacks: Customer Effort Score for friction, CSAT tied to specific interactions, retention and repeat usage for real behavior, error rates and time-to-resolution for digital and service journeys.</p>
-    <p>These are more actionable because they sit closer to what customers actually do, they're tied to a moment rather than a vague relationship, and they're easier to link to operational change. But they still share one limitation: most of them still rely on customers telling us how they feel.</p>
+    <p>The real shift ahead isn't a better survey. It's measuring satisfaction without asking at all — moving from the thermometer you hold up after the fact to signals that read the room while the experience is still happening.</p>
+    <p>The idea is to catch what customers never bother typing into a form: language patterns in chats, emails, reviews; repetition and escalation in a thread; the drop-offs, retries, the little frictions in a journey; eventually, the tone and hesitation in a live call. Stitch it together and you get something closer to a living read — continuous instead of a snapshot, population-wide instead of a sample, real-time instead of looking backward. Trouble flagged before anyone files a complaint.</p>
+    <p>And here's where I'd rather be honest than breathless, because this is exactly where the industry runs ahead of itself. Reading emotion off tone or hesitation is contested territory, not settled science. A multi-year review led by Lisa Feldman Barrett found vocal and facial cues map to emotion only weakly once you strip the context out — the same furrowed brow can mean anger, deep concentration, or someone who just forgot their reading glasses. Stack the regulatory drift on top — the EU AI Act already restricts emotion recognition in workplaces and schools — and "satisfaction you can sense" starts looking less like a launch and more like a frontier with real headwinds, scientific and legal both. A thermometer that guesses your fever from your posture is worth watching. It isn't worth trusting yet.</p>
 
-    <h2 id="s3">3. The shift toward fluid, adaptive measurement</h2>
+    <h2 id="s4">So where does that leave the number?</h2>
 
-    <p>The most important change ahead isn't a better survey. It's measuring satisfaction without asking. Teams are moving toward passive, continuous signals that reflect near-real-time experience. Enabled by AI, they can observe:</p>
-    <ul>
-      <li>Tone, pace, and hesitation in calls.</li>
-      <li>Language patterns across chats, emails, and reviews.</li>
-      <li>Repetition, escalation, and emotional intensity.</li>
-      <li>Drop-offs, retries, and friction in digital journeys.</li>
-    </ul>
-    <p>Together these form emotional profiles: how a customer's behavior shifts under stress or dissatisfaction, when frustration builds, when trust erodes or recovers. Unlike a survey snapshot, these profiles are continuous and evolving, population-wide rather than sampled, and real-time rather than retrospective. They let teams catch problems before customers complain. Satisfaction becomes something you sense.</p>
+    <blockquote><p>The strongest teams still keep NPS on the wall — they've just stopped asking it to tell them what's wrong, why it's wrong, and how to fix it, all at once.</p></blockquote>
 
-    <blockquote><p>The strongest teams in 2025 still use NPS. They just no longer need it to tell the whole story.</p></blockquote>
+    <p>The currency of CX is sliding from a score to a sense. From what customers say once a quarter to what they show us, every day, without being asked. And the question I keep sitting with is the uncomfortable one underneath all of it: when we can finally measure satisfaction without ever sending another survey — will customers feel better understood, or just more closely watched?</p>
+
+    <p class="blog-note"><strong>Bonus:</strong> the Ipsos Forces of CX is worth a look if you're deep in this — a good reminder that relational NPS is a far messier animal than its transactional cousin. More factors, more noise, more humanity per data point.<br><br>
+      <strong>Sources</strong><br>
+      Fred Reichheld, <em>"The One Number You Need to Grow,"</em> Harvard Business Review, 2003. Developed with Satmetrix; Bain &amp; Company holds the NPS trademark.<br><br>
+      Timothy Keiningham et al., "A Longitudinal Examination of Net Promoter and Firm Revenue Growth," <em>Journal of Marketing</em>, 2007.<br><br>
+      Lisa Feldman Barrett et al., summarised in AAAS (2020) and Northeastern Global News (2021); the EU AI Act restricts emotion recognition in workplaces and schools.<br><br>
+      <strong>Credits</strong><br>
+      Claude (Anthropic) helped rework the piece around its central metaphor and ground each claim in a primary source.
+    </p>
 
   </article>
 
